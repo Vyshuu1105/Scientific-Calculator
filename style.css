@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #ecf0f1;
+    --number-color: #2ecc71;
+    --operator-color: #e74c3c;
+    --function-color: #9b59b6;
+    --constant-color: #f1c40f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+}
+
+.calculator {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 95vw;
+}
+
+.display-container {
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 2em;
+    text-align: right;
+    outline: none;
+}
+
+.history {
+    color: #95a5a6;
+    font-size: 0.9em;
+    text-align: right;
+    min-height: 20px;
+    margin-top: 5px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.number {
+    background-color: var(--number-color);
+}
+
+.operator {
+    background-color: var(--operator-color);
+}
+
+.function {
+    background-color: var(--function-color);
+}
+
+.constant {
+    background-color: var(--constant-color);
+    color: var(--primary-color);
+}
+
+.equals {
+    background-color: var(--accent-color);
+    grid-column: span 2;
+}
+
+.clear, .backspace {
+    background-color: var(--operator-color);
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 100%;
+        margin: 10px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    #display {
+        font-size: 1.5em;
+        height: 50px;
+    }
+}
